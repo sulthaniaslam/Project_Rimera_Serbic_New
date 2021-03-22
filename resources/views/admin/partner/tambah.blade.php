@@ -48,6 +48,7 @@
             <div class="card-footer">
                 <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-plus"></i> Simpan</button>
                 <a href="{{ route('partner') }}" class="btn btn-sm btn-warning"><i class="fas fa-angle-double-left"></i> Kembali</a>
+                <a href=""></a>
             </div>
         </div>
     </form>
