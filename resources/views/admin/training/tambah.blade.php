@@ -27,7 +27,7 @@
         @csrf
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <div class="card-title">Training / Pelatihan</div>
+                <div class="card-title">Tambah data Training / Pelatihan</div>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -35,6 +35,9 @@
                         <div class="form-group">
                             <label for="">Judul Uji Kompetensi</label>
                             <input type="text" name="judul_uk[]" id="" class="form-control form-control-sm">
+                            @error('judul_uk')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-sm-2">
@@ -49,10 +52,9 @@
                 </div>
             </div>
             <div class="card-footer">
-            
+                <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-plus"></i> Simpan</button>
             </div>
         </div>
     </form>
 </section>
-
 @endsection('content')

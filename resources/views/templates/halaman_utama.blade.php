@@ -39,12 +39,16 @@
 
 <body>
 
+    {{-- @foreach($tbl_sejarah as $val)
+    {{$val->sejarah}}
+    @endforeach --}}
+
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    <header id="header" class="fixed-top d-flex align-items-center  header-transparent">
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1><a href="index.html"><img src="assets/img/logo_mediatama.png" alt="" srcset=""></a></h1>
+                <h1 class="text-white"><a href="index.html"><img src="{{asset('gambar/logo1.png')}}" alt="" srcset=""></a> RIMERA SERBIC</h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -91,8 +95,8 @@
                 <div class="carousel-container">
                     <div class="row">
                         <!-- <div class="col-sm-7"> -->
-                        <h2 class="animate__animated animate__fadeInRight text-dark">Web Design</h2>
-                        <p class="animate__animated animate__fadeInRight text-dark">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p>
+                        <h2 class="animate__animated animate__fadeInRight">Web Design</h2>
+                        <p class="animate__animated animate__fadeInRight">Jasa pembuatan website dan toko online dengan tampilan design web yang menarik, handal, dan banyak fitur. Cocok untuk company profile, online shop, personal website, e-commerce, microsite, website portal, dll.</p>
                         <!-- </div> -->
                         <!-- <div class="col-sm-5">
               <img class="animate__animated animate__fadeInRight" src="assets/img/design-web.png" width="100%" alt="" srcset="">
@@ -154,22 +158,25 @@
             <div class="container">
 
                 <div class="section-title" data-aos="zoom-out">
-                    <h2>Tentang Kami</h2>
-                    <p>CV . MEDIATAMA WEB INDONESIA</p>
+                    <h2>SEJARAH</h2>
+                    <p>CV.Remiria Serabic Konsultan </p>
                 </div>
 
+                @foreach ($tbl_sejarah as $sejarah)
+                    
+                
                 <div class="row content" data-aos="fade-up">
                     <div class="col-lg-6">
                         <p>
-                            MEDIATAMA WEB INDONESIA merupakan perusahaan yang bergerak di bidang jasa pembuatan website dan aplikasi yang berbasis data lainnya. Mediatama Web Indonesia juga lebih memfokuskan dan menitikberatkan dalam memberikan layanan pembuatan, pengembangan, dan memaksimalkan kinerja software dan website. Sistem perancangan website dan aplikasi yang kami kembangkan mempertimbangkan nilai estetika, fungsionalitas dan nilai tambah.
+                            {{$sejarah->sejarah}}.
                         </p>
                         <a href="#" class="btn-learn-more">Learn More</a>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
-                        <img src="assets/img/students.jpg" alt="" srcset="">
+                        <img src="{{asset('gambar')}}/{{$sejarah->photo}}" alt="" srcset="">
                     </div>
                 </div>
-
+                @endforeach
             </div>
         </section><!-- End About Section -->
 
@@ -330,24 +337,26 @@
                     <h2>Testimonial</h2>
                     <p>Testimonial Pelanggan</p>
                 </div>
-
                 <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">
-
+                        
                         <div class="swiper-slide">
                             <div class="testimonial-item">
-                                <p>
+                                @foreach ($tbl_konsultan as $konsultan)
+                                {{-- <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                     Pelayanan mediatama web indonesia sangat memuaskan.
                                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                </p>
-                                <img src="assets/img/user.png" class="testimonial-img" alt="">
-                                <h3>BP PAUD dan DIKMAS SUMBAR</h3>
+                                </p> --}}
+                                <img src="{{asset('gambar')}}/{{$konsultan->photo}}" class="testimonial-img" alt="">
+                                <h3>{{$konsultan->nama_konsultan}}</h3>
+                                <h4>{{$konsultan->bidang}}</h4>
                                 <!-- <h4>Ceo &amp; Founder</h4> -->
+                                @endforeach
                             </div>
                         </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
+                        
+                        {{-- <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -358,9 +367,9 @@
                                 <h3>Dinas Perumahan, Kawasan Pemukiman Indramayu</h3>
                                 <!-- <h4>Ceo &amp; Founder</h4> -->
                             </div>
-                        </div><!-- End testimonial item -->
+                        </div> --}}
 
-                        <div class="swiper-slide">
+                        {{-- <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -371,9 +380,9 @@
                                 <h3>PT. Kemilau Nuansa Panorama</h3>
                                 <!-- <h4>Ceo &amp; Founder</h4> -->
                             </div>
-                        </div><!-- End testimonial item -->
+                        </div> --}}
 
-                        <div class="swiper-slide">
+                        {{-- <div class="swiper-slide">
                             <div class="testimonial-item">
                                 <p>
                                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -384,9 +393,10 @@
                                 <h3>Honda Padang</h3>
                                 <!-- <h4>Ceo &amp; Founder</h4> -->
                             </div>
-                        </div><!-- End testimonial item -->
+                        </div> --}}
 
                     </div>
+                    
                     <div class="swiper-pagination"></div>
                 </div>
 

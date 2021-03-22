@@ -14,7 +14,9 @@ class CreateTblTrainingTable extends Migration
     public function up()
     {
         Schema::create('tbl_training', function (Blueprint $table) {
+            $table->string('kode');
             $table->increments('id');
+            $table->string('id_b');
             $table->string('judul_uk');
             $table->timestamps();
         });

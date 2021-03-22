@@ -41,11 +41,16 @@
                     @foreach($tbl_training as $value)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $value->id }}</td>
+                        <td>{{ $value->kode . $value->id . $value->id_b }}</td>
                         <td>{{ $value->judul_uk }}</td>
                         <td>
-                            <a href="" class="btn btn-sm btn-block btn-warning"><i class="fas fa-edit"></i> Edit</a>
-                            <a href="" class="btn btn-sm btn-block btn-danger"><i class="fas fa-trash"></i> Hapus</a>
+                            <a href="{{ route('training.edit',$value->id) }}" class="btn btn-sm btn-block btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                            <!-- <a href="" class="btn btn-sm btn-block btn-danger"><i class="fas fa-trash"></i> Hapus</a> -->
+                            <form action="{{ route('training.hapus',$value->id) }}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-sm btn-block btn-danger mt-1"><i class="fas fa-trash"></i> Hapus</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
