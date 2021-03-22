@@ -90,7 +90,7 @@
             
                 <li class="nav-item">
                     <a href="{{ route('struktur_organisasi') }}" class="nav-link">
-                        <i class="fas fa-book-open ml-1 mr-2"></i>
+                        <i class="fas fa-project-diagram ml-1 mr-2"></i>
                         <p>
                             Struktur Organisasi
                             <!-- <span class="right badge badge-danger">New</span> -->
