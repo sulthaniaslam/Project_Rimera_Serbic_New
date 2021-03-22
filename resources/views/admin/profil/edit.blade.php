@@ -21,7 +21,6 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-    <a href="{{ route('profil') }}" class="btn btn-sm btn-secondary mb-2"><i class="fas fa-angle-double-left"></i> Kembali</a>
 
     <form action="{{ route('profil.edit.proses',$tbl_profil->id) }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -77,7 +76,7 @@
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-plus"></i> Simpan</button>
-                <!-- <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-window-close"></i> Cancel</button> -->
+                <a href="{{ route('profil') }}" class="btn btn-sm btn-warning"><i class="fas fa-angle-double-left"></i> Kembali</a>
             </div>
         </div>
     </form>
