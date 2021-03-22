@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Blank Page</title>
+    <title>@yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -67,96 +67,55 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            
-                <li class="nav-item">
-                    <a href="{{ route('sejarah') }}" class="nav-link">
-                        <i class="fas fa-history ml-1 mr-2"></i>
-                        <p>
-                            Sejarah
-                            <!-- <span class="right badge badge-danger">New</span> -->
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('visi_misi') }}" class="nav-link">
-                        <i class="fas fa-book-open ml-1 mr-2"></i>
-                        <p>
-                            Visi Misi
-                            <!-- <span class="right badge badge-danger">New</span> -->
-                        </p>
-                    </a>
-                </li>
-            
-                <li class="nav-item">
-                    <a href="{{ route('struktur_organisasi') }}" class="nav-link">
-                        <i class="fas fa-book-open ml-1 mr-2"></i>
-                        <p>
-                            Struktur Organisasi
-                            <!-- <span class="right badge badge-danger">New</span> -->
-                        </p>
-                    </a>
-                </li>
-            
-                <li class="nav-item">
-                    <a href="{{ route('konsultan') }}" class="nav-link">
-                        <i class="fas fa-user-friends ml-1 mr-2"></i>
-                        <p>
-                            Konsultan
-                            <!-- <span class="right badge badge-danger">New</span> -->
-                        </p>
-                    </a>
-                </li>
                         <li class="nav-item">
                             <a href="{{ route('training') }}" class="nav-link">
-                                <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Training
                                     <!-- <span class="right badge badge-danger">New</span> -->
                                 </p>
                             </a>
                         </li>
-
+                    
                         <li class="nav-item">
-                            <a href="{{ route('kegiatan') }}" class="nav-link">
-                                <i class="nav-icon fas fa-chart-line"></i>
+                            <a href="{{ route('sejarah') }}" class="nav-link">
+                                <i class="fas fa-history ml-2 mr-2"></i>
                                 <p>
-                                    Kegiatan
+                                    sejarah
                                     <!-- <span class="right badge badge-danger">New</span> -->
                                 </p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('partner') }}" class="nav-link">
-                                <i class="nav-icon far fa-handshake"></i>
+                            <a href="{{ route('visi_misi') }}" class="nav-link">
+                                <i class="fas fa-book-open ml-1 mr-2"></i>
                                 <p>
-                                    Partner Kerjasama
+                                    Visi Misi
                                     <!-- <span class="right badge badge-danger">New</span> -->
                                 </p>
                             </a>
                         </li>
-
+                       
                         <li class="nav-item">
-                            <a href="{{ route('profil') }}" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
+                            <a href="{{ route('struktur_organisasi') }}" class="nav-link">
+                                <i class="fas fa-book-open ml-1 mr-2"></i>
                                 <p>
-                                    Profil Trainer
+                                    Struktur Organisasi
                                     <!-- <span class="right badge badge-danger">New</span> -->
                                 </p>
                             </a>
                         </li>
-
+                       
                         <li class="nav-item">
-                            <a href="{{ route('kontak') }}" class="nav-link">
-                                <i class="nav-icon far fa-address-book"></i>
+                            <a href="{{ route('konsultan') }}" class="nav-link">
+                                <i class="fas fa-user-friends ml-1 mr-2"></i>
                                 <p>
-                                    Kontak
+                                    Konsultan
                                     <!-- <span class="right badge badge-danger">New</span> -->
                                 </p>
                             </a>
                         </li>
-                        
 
                     </ul>
                 </nav>
@@ -170,7 +129,6 @@
             <!-- Content Header (Page header) -->
             @yield('content')
             <!-- /.content -->
-            @include('sweetalert::alert')
         </div>
         <!-- /.content-wrapper -->
 
